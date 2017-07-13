@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+<<<<<<< HEAD:app/assets/stylesheets/application.scss
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
@@ -25,3 +26,8 @@
         -moz-border-radius: 8px;
              border-radius: 8px;
  }
+||||||| merged common ancestors
+=======
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+>>>>>>> 01ffed4dc4e541e9ff46eb6f97558c7fd1ede8c7:app/assets/stylesheets/application.scss
