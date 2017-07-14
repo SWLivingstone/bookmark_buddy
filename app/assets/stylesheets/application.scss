@@ -16,12 +16,14 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- .btn-xlarge {
-     padding: 28px 50px;
-     height: 50px;
-     font-size: 50px; //change this to your desired size
-     line-height: normal;
-     -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-             border-radius: 8px;
+ .navbar-default {
+     background-color: #C90F00;
+     border-color: #F2E6D0;
  }
+ .navbar-default .navbar-brand {
+    color: #F5D547;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
