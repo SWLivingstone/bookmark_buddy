@@ -1,0 +1,17 @@
+<h1 class="title">
+  <%= @topic.title %>
+</h1>
+
+<button class="btn-danger pull-right">
+  <%= link_to "Delete Topc", @topic, method: :delete, data: {confirm: "Are you sure?  If you delete this topic all associated bookmarks will be lost."}%>
+</button>
+<% @topic.bookmarks.each do |bookmark| %>
+  <div class="bookmarks">
+    <h4>
+      <%= bookmark.title %>
+    </h4>
+    <small>
+      <%= bookmark.url %>
+    </small>
+  </div>
+<% end %>

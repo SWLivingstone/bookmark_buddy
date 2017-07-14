@@ -1,0 +1,29 @@
+<div>
+  <h1 class="title">Topics</h1>
+  <div class="topic-options">
+    <%= form_for Topic.new do |f| %>
+      <%= f.label "Create New Topic" %>
+      <%= f.text_field :title, placeholder: "Enter Topic Name" %>
+      <%= f.submit "Add Topic" %>
+    <% end %>
+  </div>
+  <% @topics.each do |topic| %>
+    <div class="topics">
+      <h2>
+        <%= link_to topic.title, topic %>
+      </h2>
+      <div class="bookmark-container">
+        <% topic.bookmarks.each do |bookmark| %>
+        <div class="bookmarks">
+          <h4>
+            <%= bookmark.title %>
+          </h4>
+          <small>
+            <%= bookmark.url %>
+          </small>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

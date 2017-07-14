@@ -1,0 +1,70 @@
+.title {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+a:link {
+  color: white;
+}
+a:visited {
+  color: #FFFFFF;
+}
+a:hover {
+  color: #CCCCCC;
+}
+a:active {
+  color: white;
+}
+
+.bookmark-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.bookmark-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #F5D547;
+    border-radius: 10px;
+}
+
+.bookmark-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px #F5D547;
+    background-color: #F5D547;
+}
+
+.bookmarks {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.bookmark-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.topic-options {
+  text-align: center;
+  color: #1446A0;
+}
+
+.topics {
+  margin-bottom: 20px;
+  max-width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: #DB3069;
+  border-radius: 25px;
+  color: white;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+@media (max-width: 414px) {
+  .topics {
+    max-width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
