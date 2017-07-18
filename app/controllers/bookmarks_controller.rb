@@ -1,7 +1,7 @@
 class BookmarksController < ApplicationController
   include ApplicationHelper
   before_action :authenticate
-  
+
   def show
     @bookmark = Bookmark.find(params[:id])
   end
@@ -13,8 +13,10 @@ class BookmarksController < ApplicationController
   def create
     @topic = Topic.find(params[:bookmark][:topic])
     @bookmark = @topic.bookmarks.build
+    authorize @bookmark
     @bookmark.title = params[:bookmark][:title]
     @bookmark.url = params[:bookmark][:url]
+    @bookmark.user = current_user
 
     if @bookmark.save
       redirect_to @topic, notice: "Bookmark was saved successfully."
@@ -26,6 +28,7 @@ class BookmarksController < ApplicationController
 
   def update
     @bookmark = Bookmark.find(params[:id])
+    authorize @bookmark
     @bookmark.title = params[:bookmark][:title]
     @bookmark.url = params[:bookmark][:url]
 
@@ -40,6 +43,7 @@ class BookmarksController < ApplicationController
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
+    authorize @bookmark
 
     if @bookmark.delete
       redirect_to @bookmark.topic, notice: "Bookmark was succesfully deleted"
