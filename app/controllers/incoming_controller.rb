@@ -1,4 +1,5 @@
 class IncomingController < ApplicationController
+skip_before_action :verify_authenticity_token
 
   def create
    puts "INCOMING PARAMS HERE: #{params}"
