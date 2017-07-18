@@ -1,12 +1,27 @@
-if Rails.env.development? || Rails.env.production?
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-       :address => "smtp.gmail.com",
-       :port => 587,
-       :domain => "gmail.com",
-       :user_name => ENV['EMAIL'],
-       :password => ENV['PWORD'],
-       :authentication => :plain,
-       :enable_starttls_auto => true
-  }
+ActionMailer::Base.smtp_settings = {
+  port:              587,
+  address:           'smtp.mailgun.org',
+  user_name:         ENV['MAILGUN_SMTP_LOGIN'],
+  password:          ENV['MAILGUN_SMTP_PASSWORD'],
+  domain:            'appurlhere.com',
+  authentication:    :plain,
+  content_type:      'text/html'
+}
+
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.raise_delivery_errors = true
+
+
+class DevelopmentMailInterceptor
+  def self.delivering_email(message)
+    message.to =  'scottwlivingstone@gmail.com'
+    message.cc = nil
+    message.bcc = nil
+  end
+end
+
+# Locally, outgoing mail will be 'intercepted' by the
+# above DevelopmentMailInterceptor before going out
+if Rails.env.development?
+  ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor)
 end
