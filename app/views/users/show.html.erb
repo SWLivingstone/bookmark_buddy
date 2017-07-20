@@ -1,1 +1,9 @@
 <%= link_to "Change Password", edit_user_registration_path %>
+<% Bookmark.all.where(id: current_user.likes).each do |like| %>
+  <h4>
+    <%= "#{like.title}" %>
+  </h4>
+  <p>
+    <%= link_to "#{like.url}", "http://#{like.url}" %>
+  </p>
+<% end %>
