@@ -1,3 +1,19 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.owned-bookmarks {
+  background-color: #DB3069;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.liked-bookmarks {
+  background-color: #F5D547;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.user-home-page {
+  color: #1446A0;
+}

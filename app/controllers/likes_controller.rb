@@ -8,7 +8,7 @@ class LikesController < ApplicationController
      like = current_user.likes.build(bookmark: @bookmark)
 
      if like.save
-       redirect_to @topic, notice: "You have liked the bookmark #{@bookmark.title}."
+       redirect_to :back, notice: "You have liked the bookmark #{@bookmark.title}."
      else
        flash.now[:alert] = "Error liking bookmark. Please try again."
        redirect_to @topic
@@ -20,7 +20,7 @@ class LikesController < ApplicationController
     @topic = Topic.find_by(id: @bookmark.topic_id)
       like = current_user.likes.find_by(bookmark: @bookmark)
     if like.destroy
-      redirect_to @topic, notice: "You have unliked the bookmark #{@bookmark.title}."
+      redirect_to :back, notice: "You have unliked the bookmark #{@bookmark.title}."
     else
       flash.now[:alert] = "Error unliking bookmark. Please try again."
       redirect_to @topic

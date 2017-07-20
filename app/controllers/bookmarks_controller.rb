@@ -46,10 +46,10 @@ class BookmarksController < ApplicationController
     authorize @bookmark
 
     if @bookmark.delete
-      redirect_to @bookmark.topic, notice: "Bookmark was succesfully deleted"
+      redirect_to :back, notice: "Bookmark was succesfully deleted"
     else
       flash.now[:alert] = "Error deleteing bookmark. Please try again"
-      redirect_to @bookmark.topic
+      redirect_to :back
     end
   end
 
