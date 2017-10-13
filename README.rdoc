@@ -1,28 +1,11 @@
-== README
+## Bookmark Buddy: a web app to store and share bookmarks.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting started
 
-Things you may want to cover:
+1. Clone repo
 
-* Ruby version
+2. run `bundle install`
 
-* System dependencies
+3. run `rails s`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+4. Open in web browser (http://localhost:3000)
